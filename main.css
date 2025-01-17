@@ -359,25 +359,45 @@ img.reload {
 @media print {
 	body,
 	p,
-	a,
-	h1,
-	.h1,
-	h2,
-	.h2,
-	h3,
-	.h3,
-	h4,
-	.h4,
-	h5,
-	.h5 {
-		background-color: white !important;
-		color: black !important;
+	a {
+		background-color: white;
+		color: black;
 		opacity: 1;
 		width: 100%;
+		font-size: 100% !important;
+	}
+
+	h4,
+	.h4 {
+		font-size: 110%;
+	}
+	h5,
+	.h5 {
+		font-size: 102%;
+	}
+
+	.fw-lighter {
+		font-weight: 200;
+	}
+
+	.list-unstyled {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.list-unstyled > li {
+		flex: 0 0 auto;
+		width: 50%;
+		padding-right: 30px;
+	}
+
+	.special {
+		color: var(--bs-danger) !important;
+		text-shadow: none !important;
 	}
 
 	.onScroll {
-		opacity: 1 !important;
+		opacity: 1;
 	}
 
 	.min-vh-100 {
