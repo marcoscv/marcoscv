@@ -356,6 +356,67 @@ img.reload {
 	}
 }
 
+@media print {
+	body,
+	p,
+	a,
+	h1,
+	.h1,
+	h2,
+	.h2,
+	h3,
+	.h3,
+	h4,
+	.h4,
+	h5,
+	.h5 {
+		background-color: white !important;
+		color: black !important;
+		opacity: 1;
+		width: 100%;
+	}
+
+	.onScroll {
+		opacity: 1 !important;
+	}
+
+	.min-vh-100 {
+		min-height: auto;
+	}
+
+	img {
+		display: none;
+	}
+
+	a {
+		color: black;
+		text-decoration: none;
+	}
+
+	[style*='background'] {
+		background: none !important;
+	}
+
+	body,
+	html {
+		margin: 0;
+		padding: 0;
+		width: 100%;
+	}
+
+	main,
+	section,
+	article {
+		width: 100%;
+	}
+
+	.no-print,
+	nav,
+	footer {
+		display: none !important;
+	}
+}
+
 /* Fonts and resources */
 
 /* latin */
