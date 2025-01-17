@@ -1,0 +1,359 @@
+:root {
+	--text-color: #fff9f1;
+	--text-white: #fff9f1;
+	--bs-body-font-size: 1.15rem;
+	--bs-focus-ring-width: 4px;
+	--bs-focus-ring-opacity: 1;
+	--bs-focus-ring-color: var(--bs-danger);
+}
+
+.dropdown-menu {
+	--bs-dropdown-link-active-bg: var(--bs-danger);
+}
+
+.bg-light {
+	border-width: 0.5px 0;
+	border-color: #d3d6e0;
+	border-style: solid;
+}
+
+body[data-bs-theme='light'] {
+	--bs-body-font-size: 1.15rem;
+}
+
+body[data-bs-theme='dark'] {
+	--bs-gray-300: var(--bs-gray-800);
+	--bs-body-font-size: 1.15rem;
+}
+
+body[data-bs-theme='dark'] .bg-light {
+	border-color: #121212;
+	background-color: #27292c !important;
+}
+
+h2,
+.h2,
+h3,
+.h3 {
+	letter-spacing: 1px;
+}
+
+p {
+	line-height: 1.6;
+}
+
+.text-white {
+	color: var(--text-white);
+}
+
+.btn-icon {
+	line-height: 1;
+	padding: 8px;
+}
+
+.min-vh-100 {
+	min-height: 100vh !important;
+}
+
+.min-vh-100-sm {
+	@media (min-width: 576px) {
+		min-height: 100vh !important;
+	}
+}
+
+.dropdown-menu .display-7 {
+	font-size: 1.4rem;
+	font-weight: 300;
+	line-height: 1.5;
+}
+
+@media (min-width: 576px) {
+	.position-fixed-sm {
+		position: fixed;
+		z-index: 999;
+	}
+
+	.display-7 {
+		font-size: 1.6rem;
+	}
+}
+
+@media (min-width: 1200px) {
+	.display-1 {
+		font-size: 6rem;
+	}
+
+	.display-7 {
+		font-size: 2.2rem;
+	}
+}
+
+.special {
+	font-size: 6rem;
+	text-align: center;
+	color: #fcedd8;
+	background: #d52e3f;
+	font-family: 'Niconne', cursive;
+	font-weight: 700;
+	font-style: italic;
+	line-height: 0.6;
+	text-transform: lowercase;
+	margin-bottom: 100px;
+	text-shadow: 4px 4px 0px #eb452b, 8px 8px 0px #efa032, 16px 16px 0px #c11a2b;
+
+	@media (min-width: 400px) {
+		font-size: 7rem;
+	}
+
+	@media (min-width: 520px) {
+		font-size: 9rem;
+		padding-right: 20px;
+	}
+
+	@media (min-width: 720px) {
+		font-size: 11rem;
+		padding-right: 30px;
+		text-shadow: 4px 4px 0px #eb452b, 8px 8px 0px #efa032,
+			12px 12px 0px #46b59b, 30px 30px 0px #c11a2b, 35px 35px 0px #c11a2b,
+			40px 40px 0px #c11a2b, 45px 45px 0px #c11a2b;
+	}
+
+	@media (min-width: 1200px) {
+		font-size: 13rem;
+	}
+}
+
+.special span {
+	font-size: 125%;
+}
+
+footer {
+	border-top: 1px solid var(--bs-gray-300);
+}
+
+.bg-special-red,
+.bg-special-red:focus {
+	background-color: #d52e3f;
+	color: var(--text-color);
+}
+
+.video {
+	width: 100%;
+}
+
+.gif-container {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	outline: none;
+	transition: all 0.3s;
+}
+
+.gif-container:hover {
+	box-shadow: 0px 0px 16px #ccc;
+}
+
+.gif-container:focus-visible,
+a:focus-visible,
+button:focus-visible,
+.dropdown-toggle:focus-visible,
+.blue-focus:focus-visible {
+	outline: 4px solid #0078d7;
+}
+
+.gif-container:focus-visible,
+a.shadow:focus-visible {
+	box-shadow: 0 0 0px 7px black !important;
+}
+
+.gif-container:after {
+	content: 'Play';
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	background: rgba(0, 0, 0, 0.3);
+	color: white;
+	padding: 2px 5px 4px;
+	font-size: 12px;
+	border-radius: 6px;
+	pointer-events: none;
+	z-index: 10;
+	border: 0.5px solid white;
+}
+
+.gif-container:before {
+	position: absolute;
+	font-size: 0;
+	opacity: 0;
+	content: 'Press Enter to ';
+}
+
+.gif-container:hover:after,
+.gif-container:focus:after {
+	display: inline;
+}
+
+.gif-container.playing:after {
+	content: '||';
+}
+.gif-container.playing:before {
+	content: 'Press Enter to Stop';
+}
+
+.gif-container.playing:not(:hover):not(:focus):after {
+	display: none;
+}
+
+/* .carousel */
+
+img.reload {
+	padding: 0.25em;
+	display: block-inline;
+	position: relative;
+	top: 6px;
+	height: 0.9em;
+}
+
+.carousel {
+	background-color: #eee;
+}
+
+.carousel .carousel-inner {
+	position: relative;
+}
+
+.carousel .carousel-item {
+	display: none;
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+
+.carousel .carousel-item.active {
+	display: block;
+}
+
+.carousel .carousel-item .carousel-image a img {
+	height: 100%;
+	width: 100%;
+}
+
+.carousel .carousel-item .carousel-caption a {
+	cursor: pointer;
+	text-decoration: underline;
+	color: #fff;
+	font-weight: 600;
+}
+
+/* Shared CSS for Pause, Previous and Next Buttons */
+
+.carousel .controls {
+	position: absolute;
+	top: 1em;
+	z-index: 10;
+	width: 100%;
+	padding: 0.25em 1.25em 0;
+}
+
+.carousel .controls .btn {
+	position: absolute;
+	z-index: 10;
+	line-height: 1;
+}
+
+.carousel .controls .btn.previous {
+	right: 70px;
+}
+
+.carousel .controls .btn.next {
+	right: 18px;
+}
+
+.carousel .pause .bi-pause,
+.carousel .play .bi-play {
+	display: block;
+}
+
+.carousel .pause .bi-play,
+.carousel .play .bi-pause {
+	display: none;
+}
+
+.onScroll {
+	opacity: 0;
+	transition: opacity 0.5s ease-out;
+}
+
+.onScroll.visible {
+	opacity: 1;
+}
+
+.animate__arrow {
+	@media (max-height: 500px) {
+		display: none !important;
+	}
+
+	animation: moveOpacity 3s ease-in-out 1, moveDown 2s ease-in-out infinite;
+}
+
+@keyframes moveDown {
+	0% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(10px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes moveOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.animation-delay01s {
+		animation-delay: 0.1s;
+	}
+
+	.animation-delay02s {
+		animation-delay: 0.2s;
+	}
+
+	.animation-delay03s {
+		animation-delay: 0.3s;
+	}
+
+	.animation-delay04s {
+		animation-delay: 0.4s;
+	}
+
+	.animation-delay05s {
+		animation-delay: 0.5s;
+	}
+
+	.animation-delay12s {
+		animation-delay: 1.2s;
+	}
+}
+
+/* Fonts and resources */
+
+/* latin */
+@font-face {
+	font-family: 'Niconne';
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url(https://fonts.gstatic.com/s/niconne/v15/w8gaH2QvRug1_rTfnQyn2XwNqOs.woff2)
+		format('woff2');
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
+		U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191,
+		U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
