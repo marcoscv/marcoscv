@@ -5,9 +5,15 @@
 	--new-danger: #e4606c;
 }
 
+.skip {
+	top: 10px;
+	left: 10px;
+	z-index: 999;
+}
+
 .dropdown-menu {
 	--bs-dropdown-link-active-bg: var(--bs-danger);
-	min-width: 104px;
+	min-width: 112px;
 }
 
 .dropdown-menu svg {
