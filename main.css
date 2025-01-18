@@ -443,6 +443,69 @@ img.reload {
 	}
 }
 
+@media (min-width: 720px) {
+	.timeline {
+		list-style: none;
+		padding-left: 0;
+		padding-left: 25px;
+	}
+
+	.timeline-icon {
+		background-color: #fff;
+		border: 2px solid #6b6c7e;
+		border-radius: 50%;
+		display: block;
+		height: 10px;
+		line-height: 10px;
+		width: 10px;
+	}
+
+	.timeline-item {
+		padding-bottom: 5px;
+		padding-left: 55px;
+		padding-top: 5px;
+		position: relative;
+	}
+
+	.timeline-item:before {
+		background-color: var(--bs-gray-300);
+		bottom: 0;
+		content: '';
+		display: block;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 1px;
+	}
+
+	.timeline-item:first-child:before {
+		top: 50%;
+	}
+
+	.timeline-item:last-child:before {
+		bottom: 50%;
+	}
+
+	.timeline-increment {
+		position: absolute;
+		text-align: center;
+		top: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 1;
+		left: 0;
+	}
+
+	.timeline-increment:after {
+		content: '';
+		display: block;
+		border-radius: 0.5rem;
+		height: 13px;
+		width: 13px;
+		border: 0.5px solid var(--bs-gray-600);
+		background-color: var(--bs-body-bg);
+	}
+}
+
 /* Fonts and resources */
 
 /* latin */
