@@ -38,6 +38,7 @@ function updateActiveButton(theme) {
 	const buttons = document.querySelectorAll('.theme-btn');
 	buttons.forEach((button) => button.classList.remove('active'));
 	const newIcon = document.querySelector('.nuevo-icono');
+	let darkButton;
 	newIcon.innerHTML = '';
 
 	if (theme === 'dark') {
@@ -85,6 +86,29 @@ loadTheme();
 // );
 
 const gifContainers = document.querySelectorAll('.gif-container');
+const mediaVideos = [...document.querySelectorAll('.gif-container video')];
+
+function stopVideo(video) {
+	video.currentTime = 0;
+	video.pause();
+	video.removeAttribute('controls');
+	video.closest('.gif-container')?.classList.remove('playing');
+}
+
+function stopOtherVideos(currentVideo) {
+	mediaVideos.forEach((otherVideo) => {
+		if (otherVideo !== currentVideo) {
+			stopVideo(otherVideo);
+		}
+	});
+}
+
+mediaVideos.forEach((video) => {
+	video.addEventListener('play', () => {
+		stopOtherVideos(video);
+		video.closest('.gif-container')?.classList.add('playing');
+	});
+});
 
 gifContainers.forEach((container) => {
 	const image = container.querySelector('.gif, .jpg, .png');
@@ -103,6 +127,19 @@ gifContainers.forEach((container) => {
 		}
 	}
 
+	if (video) {
+		video.addEventListener('pause', () => {
+			if (video.currentTime === 0 || video.ended) {
+				video.removeAttribute('controls');
+			}
+			container.classList.remove('playing');
+		});
+
+		video.addEventListener('ended', () => {
+			stopVideo(video);
+		});
+	}
+
 	const toggleMedia = () => {
 		if (image) {
 			const isPlaying = image.src === image.dataset.animated;
@@ -115,23 +152,20 @@ gifContainers.forEach((container) => {
 		if (video) {
 			if (video.paused) {
 				video.play();
-				container.classList.add('playing');
 
 				setTimeout(() => {
 					video.setAttribute('controls', '');
 				}, '500');
 			} else {
-				video.currentTime = 0;
-				video.pause();
-				video.removeAttribute('controls');
-				container.classList.remove('playing');
+				stopVideo(video);
 			}
 		}
 	};
 
 	container.addEventListener('click', toggleMedia);
 	container.addEventListener('keydown', (e) => {
-		if (e.key === 'Enter') {
+		if (e.key === 'Enter' || e.key === ' ') {
+			e.preventDefault();
 			toggleMedia();
 		}
 	});
