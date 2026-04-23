@@ -95,10 +95,21 @@ function stopVideo(video) {
 	video.closest('.gif-container')?.classList.remove('playing');
 }
 
+function pauseVideo(video) {
+	video.pause();
+	video.removeAttribute('controls');
+	video.closest('.gif-container')?.classList.remove('playing');
+}
+
 function stopOtherVideos(currentVideo) {
 	mediaVideos.forEach((otherVideo) => {
-		if (otherVideo !== currentVideo) {
-			stopVideo(otherVideo);
+		const hasStarted =
+			otherVideo.currentTime > 0 ||
+			!otherVideo.paused ||
+			otherVideo.ended;
+
+		if (otherVideo !== currentVideo && hasStarted) {
+			pauseVideo(otherVideo);
 		}
 	});
 }
